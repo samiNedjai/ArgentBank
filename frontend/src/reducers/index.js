@@ -3,9 +3,10 @@ import PostUserReducer from "./post.user.reducer";
 
 
 
+
+
 export default combineReducers({
     // reducers
-    user: PostUserReducer
+    user: PostUserReducer,
     
-
 }) 

@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Error from './pages/Error';
-// import UserAccount from './pages/UserAccount';
-// import PrivateRoute from './components/PrivateRoute';
+import UserAccount from './pages/UserAccount';
+
+ import PrivateRoute from './routing/PrivateRoute';
 
 
 
@@ -15,9 +16,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
-        {/* <Route element={<PrivateRoute />}>
+        <Route element={<PrivateRoute />}>
           <Route path='/user-account' element={<UserAccount />} />
-        </Route> */}
+        </Route>
         <Route path='*' element={<Error />} />
       </Routes>
     </BrowserRouter>

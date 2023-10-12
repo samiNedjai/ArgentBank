@@ -3,7 +3,7 @@ import { USER_PROFILE } from '../actions/post.userprofile.action';
 
 const initialState = {
     loginError: null,
-    userProfile: '',
+     userProfile: '',
   };
   
 
