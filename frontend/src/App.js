@@ -1,11 +1,26 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Error from './pages/Error';
+// import UserAccount from './pages/UserAccount';
+// import PrivateRoute from './components/PrivateRoute';
 
-import './styles/App.css';
+
+
 
 function App() {
   return (
-    <div className="App">
-     
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        {/* <Route element={<PrivateRoute />}>
+          <Route path='/user-account' element={<UserAccount />} />
+        </Route> */}
+        <Route path='*' element={<Error />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
