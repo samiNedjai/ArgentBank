@@ -13,7 +13,7 @@ const Navbar = () => {
   const tokenSessionStorage = sessionStorage.getItem('token');
   const token = tokenLocalStorage || tokenSessionStorage;
   const userProfile = useSelector((state) => state.user.userProfile);
-  console.log(userProfile);
+  // console.log(userProfile);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

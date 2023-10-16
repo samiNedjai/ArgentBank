@@ -28,17 +28,12 @@ export const logoutUser = () => {
 
   //////// Action pour gérer la connexion de l'utilisateur
 
-export const loginUser = (email, password, navigate, rememberMe) => {
-    return async (dispatch) => {
-      try {
-        const response = await axios.post(
-          "http://localhost:3001/api/v1/user/login",
-          {
-            email: email,
-            password: password,
-          }
-        );
-  
+  export const loginUser = (email, password, navigate, rememberMe) => (dispatch) => {
+    axios.post("http://localhost:3001/api/v1/user/login", {
+        email: email,
+        password: password,
+      })
+      .then((response) => {
         if (response.status === 200) {
           const token = response.data.body.token;
           if (rememberMe) {
@@ -52,16 +47,10 @@ export const loginUser = (email, password, navigate, rememberMe) => {
           localStorage.removeItem("token");
           sessionStorage.removeItem("token");
         }
-  
-        if (response.status === 401) {
-          localStorage.removeItem("token");
-          sessionStorage.removeItem("token");
-          navigate("/login");
-        }
-      } catch (error) {
-        dispatch(userLoginFail("Incorrect username or password "));
+      })
+      .catch((error) => {
+        dispatch(userLoginFail("Incorrect username or password"));
         localStorage.removeItem("token");
         sessionStorage.removeItem("token");
-      }
-    };
+      });
   };
