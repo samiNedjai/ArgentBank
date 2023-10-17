@@ -1,5 +1,6 @@
 import { USER_LOGIN_SUCCESS, USER_LOGIN_FAIL, LOGOUT_USER } from '../actions/post.user.action';
 import { USER_PROFILE } from '../actions/post.userprofile.action';
+import { CHANGE_USER_NAME } from '../actions/put.username.action';
 
 const initialState = {
     loginError: null,
@@ -30,6 +31,12 @@ const initialState = {
           ...state,
           userProfile: action.payload,
         };
+      case CHANGE_USER_NAME:
+        const newProfile = {...state.userProfile , userName: action.payload};
+        return {
+          ...state,
+          userProfile: newProfile
+        }
       
       default:
         return state;

@@ -36,4 +36,3 @@ export const PostUserProfile = () => (dispatch) => {
       console.error(error);
     });
 };
-  
