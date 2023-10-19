@@ -1,10 +1,10 @@
-import React from 'react';
-import './account.css';
+import React from "react";
+import "./account.css";
 
 const Account = ({ accountType, accountNumber, amount, description }) => {
   return (
     <div>
-       <section className="account">
+      <section className="account">
         <div className="account-content-wrapper">
           <h3 className="account-title">
             Argent Bank {accountType} ({accountNumber})
@@ -17,8 +17,7 @@ const Account = ({ accountType, accountNumber, amount, description }) => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Account
-
+export default Account;

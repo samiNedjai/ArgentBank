@@ -1,11 +1,11 @@
-import React from 'react';
-import Navbar from '../components/Navbar/Navbar';
-import Banner from '../components/Banner/Banner';
-import Feature from '../components/Feature/Feature';
-import Footer from '../components/Footer/Footer';
-import chatIcon from '../assets/icon-chat.webp';
-import moneyIcon from '../assets/icon-money.webp';
-import securityIcon from '../assets/icon-security.webp';
+import React from "react";
+import Navbar from "../components/Navbar/Navbar";
+import Banner from "../components/Banner/Banner";
+import Feature from "../components/Feature/Feature";
+import Footer from "../components/Footer/Footer";
+import chatIcon from "../assets/icon-chat.webp";
+import moneyIcon from "../assets/icon-money.webp";
+import securityIcon from "../assets/icon-security.webp";
 
 const Home = () => {
   return (

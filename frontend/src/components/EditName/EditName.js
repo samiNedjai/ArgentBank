@@ -1,24 +1,24 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import './editName.css';
-import { changeUserName } from '../../actions/put.username.action';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import "./editName.css";
+import { changeUserName } from "../../actions/put.username.action";
 
 const EditName = ({ setIsEditing }) => {
   const dispatch = useDispatch();
   const userProfile = useSelector((state) => state.user.userProfile);
-  const [newUserName, setNewUserName] = useState('');
+  const [newUserName, setNewUserName] = useState("");
 
   const handlechangeUserName = async () => {
     if (newUserName) {
       dispatch(changeUserName(newUserName));
       setIsEditing(false);
-      setNewUserName('');
+      setNewUserName("");
     }
   };
 
   const handleCancel = () => {
     setIsEditing(false);
-    setNewUserName('');
+    setNewUserName("");
   };
 
   return (
@@ -41,7 +41,7 @@ const EditName = ({ setIsEditing }) => {
           id="firstName"
           value={userProfile.firstName}
           disabled
-          className='text_input'
+          className="text_input"
         />
       </div>
       <div>
@@ -51,7 +51,7 @@ const EditName = ({ setIsEditing }) => {
           id="lastName"
           value={userProfile.lastName}
           disabled
-          className='text_input'
+          className="text_input"
         />
         <div className="buttons-form">
           <button onClick={handlechangeUserName}>Save</button>
@@ -59,7 +59,6 @@ const EditName = ({ setIsEditing }) => {
         </div>
       </div>
     </div>
-
   );
 };
 

@@ -1,0 +1,205 @@
+swagger: '2.0'
+info:
+  title: Bank Argent API documentation - Partie 2
+  description: Contains all available API endpoints for transactions in this codebase
+  version: '1.0.0'
+  termsOfService: 'http://swagger.io/terms/'
+host: localhost:3001
+basePath: /api/v1
+schemes:
+  - http
+paths:
+  /transactions:
+    get:
+      security:
+       - Bearer: []
+      tags:
+        - Transactions Module
+      summary: Get all transactions for the current month, grouped by account
+      description: API for getting all transactions for the current month, grouped by account
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transactions retrieved successfully
+          schema:
+            $ref: '#/definitions/TransactionsResponse'
+        '500':
+          description: Internal Server Error
+    post:
+      security:
+       - Bearer: []
+      tags:
+        - Transactions Module
+      summary: Add a new transaction
+      description: API for adding a new transaction
+      parameters:
+        - in: body
+          name: body
+          description: Transaction Payload
+          required: true
+          schema:
+            $ref: '#/definitions/Transaction'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction added successfully
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid Fields
+        '500':
+          description: Internal Server Error
+  /transactions/{transactionId}:
+    get:
+      security:
+       - Bearer: []
+      tags:
+        - Transactions Module
+      summary: Get details of a specific transaction
+      description: API for getting details of a specific transaction
+      parameters:
+        - in: path
+          name: transactionId
+          description: ID of the transaction to retrieve
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction details retrieved successfully
+          schema:
+            $ref: '#/definitions/TransactionDetails'
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
+    put:
+      security:
+       - Bearer: []
+      tags:
+        - Transactions Module
+      summary: Update details of a specific transaction
+      description: API for updating details of a specific transaction
+      parameters:
+        - in: path
+          name: transactionId
+          description: ID of the transaction to update
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Transaction Payload
+          required: true
+          schema:
+            $ref: '#/definitions/TransactionUpdate'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction updated successfully
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  Transaction:
+    properties:
+      accountId:
+        type: string
+        description: ID of the account associated with the transaction
+      date:
+        type: string
+        format: date
+        description: Date of the transaction
+      description:
+        type: string
+        description: Description of the transaction
+      amount:
+        type: number
+        description: Amount of the transaction
+      balance:
+        type: number
+        description: Balance of the account after the transaction
+  TransactionUpdate:
+    properties:
+      category:
+        type: string
+        description: Category of the transaction
+      note:
+        type: string
+        description: Note of the transaction
+  TransactionDetails:
+    properties:
+      accountId:
+        type: string
+        description: ID of the account associated with the transaction
+      date:
+        type: string
+        format: date
+        description: Date of the transaction
+      description:
+        type: string
+        description: Description of the transaction
+      amount:
+        type: number
+        description: Amount of the transaction
+      balance:
+        type: number
+        description: Balance of the account after the transaction
+      category:
+        type: string
+        description: Category of the transaction
+      note:
+        type: string
+        description: Note of the transaction
+  TransactionsResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          transactions:
+            type: array
+            items:
+              $ref: '#/definitions/Transaction'
+  ApiResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          id:
+            type: string
+          accountId:
+            type: string
+          date:
+            type: string
+            format: date
+          description:
+            type: string
+          amount:
+            type: number
+          balance:
+            type: number
+          category:
+            type: string
+          note:
+            type: string

@@ -1,7 +1,7 @@
-import React from 'react';
-import Error404 from '../components/Error404/Error404';
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
+import React from "react";
+import Error404 from "../components/Error404/Error404";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
 const Error = () => {
   return (

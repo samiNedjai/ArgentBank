@@ -1,22 +1,22 @@
 import axios from "axios";
 export const CHANGE_USER_NAME = "CHANGE_USER_NAME";
 
-
 ///////// Action pour mettre à jour le nom d'utilisateur
 
 export const changeUserName = (userName) => {
-    return (dispatch) => {
-      let token = localStorage.getItem("token");
+  return (dispatch) => {
+    let token = localStorage.getItem("token");
 
-      if (!token) {
-        token = sessionStorage.getItem("token");
-      }
+    if (!token) {
+      token = sessionStorage.getItem("token");
+    }
 
-      if (!token) {
-        return;
-      }
+    if (!token) {
+      return;
+    }
 
-      axios.put(
+    axios
+      .put(
         "http://localhost:3001/api/v1/user/profile",
         { userName },
         {
@@ -36,5 +36,5 @@ export const changeUserName = (userName) => {
       .catch((error) => {
         console.error(error);
       });
-    };
+  };
 };

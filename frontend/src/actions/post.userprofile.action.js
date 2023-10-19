@@ -14,7 +14,8 @@ export const PostUserProfile = () => (dispatch) => {
     return;
   }
 
-  axios.post(
+  axios
+    .post(
       "http://localhost:3001/api/v1/user/profile",
       {},
       {

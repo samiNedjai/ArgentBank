@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from '../../actions/post.user.action';
-import { useNavigate } from 'react-router-dom';
-import './form.css'
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../../actions/post.user.action";
+import { useNavigate } from "react-router-dom";
+import "./form.css";
 
 const Form = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const dispatch = useDispatch();
   const loginError = useSelector((state) => state.user.loginError);
@@ -19,7 +19,7 @@ const Form = () => {
 
   let errorMessage = null;
   if (loginError) {
-    errorMessage = <p style={{ color: 'red' }}>{loginError}</p>;
+    errorMessage = <p style={{ color: "red" }}>{loginError}</p>;
   }
 
   return (
@@ -58,7 +58,9 @@ const Form = () => {
             <label htmlFor="remember-me">Remember me</label>
           </div>
           {errorMessage}
-          <button className="sign-in-button" type="submit">Sign In</button>
+          <button className="sign-in-button" type="submit">
+            Sign In
+          </button>
         </form>
       </section>
     </main>
