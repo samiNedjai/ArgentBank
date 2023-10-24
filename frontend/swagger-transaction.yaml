@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   title: Bank Argent API documentation - Partie 2
-  description: Contains all available API endpoints for transactions in this codebase
+  description: Contains all available API endpoints for transactions 
   version: '1.0.0'
   termsOfService: 'http://swagger.io/terms/'
 host: localhost:3001

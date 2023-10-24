@@ -11,7 +11,7 @@ const initialState = {
   userProfile: "",
 };
 
-const PostUserReducer = (state = initialState, action) => {
+const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_LOGIN_SUCCESS:
       return {
@@ -46,4 +46,4 @@ const PostUserReducer = (state = initialState, action) => {
   }
 };
 
-export default PostUserReducer;
+export default UserReducer;
