@@ -1,9 +1,4 @@
-import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
-import MainAccount from "../components/MainAccount/MainAccount";
-import Account from "../components/Account/Account";
-
+import React from "react";import Navbar from "../components/Navbar/Navbar";import Footer from "../components/Footer/Footer";import MainAccount from "../components/MainAccount/MainAccount";import Account from "../components/Account/Account";
 const User = () => {
   return (
     <div className="page_account">
@@ -30,8 +25,4 @@ const User = () => {
         />
       </main>
       <Footer />
-    </div>
-  );
-};
-
-export default User;
+    </div>);};export default User;

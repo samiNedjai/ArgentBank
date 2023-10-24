@@ -1,12 +1,4 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Error from "./pages/Error";
-import UserAccount from "./pages/UserAccount";
-
-import PrivateRoute from "./routing/PrivateRoute";
-
+import React from "react";import { BrowserRouter, Routes, Route } from "react-router-dom";import Home from "./pages/Home";import Login from "./pages/Login";import Error from "./pages/Error";import UserAccount from "./pages/UserAccount";import PrivateRoute from "./routing/PrivateRoute";
 function App() {
   return (
     <BrowserRouter>
@@ -19,7 +11,4 @@ function App() {
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
-  );
-}
-
-export default App;
+  );}export default App;

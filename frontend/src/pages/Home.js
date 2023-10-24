@@ -1,12 +1,4 @@
-import React from "react";
-import Navbar from "../components/Navbar/Navbar";
-import Banner from "../components/Banner/Banner";
-import Feature from "../components/Feature/Feature";
-import Footer from "../components/Footer/Footer";
-import chatIcon from "../assets/icon-chat.webp";
-import moneyIcon from "../assets/icon-money.webp";
-import securityIcon from "../assets/icon-security.webp";
-
+import React from "react";import Navbar from "../components/Navbar/Navbar";import Banner from "../components/Banner/Banner";import Feature from "../components/Feature/Feature";import Footer from "../components/Footer/Footer";import chatIcon from "../assets/icon-chat.webp";import moneyIcon from "../assets/icon-money.webp";import securityIcon from "../assets/icon-security.webp";
 const Home = () => {
   return (
     <div>
@@ -21,14 +13,12 @@ const Home = () => {
             imageSrc={chatIcon}
             altText="Chat icon"
           />
-
           <Feature
             title="More savings means higher rates"
             content="The more you save with us, the higher your interest rate will be!"
             imageSrc={moneyIcon}
             altText="Money icon"
           />
-
           <Feature
             title="Security you can trust"
             content="We use top of the line encryption to make sure your data and money is always safe."
@@ -39,7 +29,4 @@ const Home = () => {
       </main>
       <Footer />
     </div>
-  );
-};
-
-export default Home;
+  );};export default Home;

@@ -1,18 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "./mainAccount.css";
-import { PostUserProfile } from "../../actions/post.userprofile.action";
-import EditName from "../EditName/EditName";
-
-const MainAccount = () => {
-  const dispatch = useDispatch();
-  const userProfile = useSelector((state) => state.user.userProfile);
-  const [isEditing, setIsEditing] = useState(false);
-
-  useEffect(() => {
-    dispatch(PostUserProfile());
-  }, [dispatch]);
-
+import React, { useEffect, useState } from "react";import { useDispatch, useSelector } from "react-redux";import "./mainAccount.css";import { PostUserProfile } from "../../actions/post.userprofile.action";import EditName from "../EditName/EditName";const MainAccount = () => {const dispatch = useDispatch();const userProfile = useSelector((state) => state.user.userProfile); const [isEditing, setIsEditing] = useState(false);useEffect(() => {dispatch(PostUserProfile());}, [dispatch]);
   return (
     <div className="header">
       {isEditing ? (
@@ -30,8 +16,4 @@ const MainAccount = () => {
           <h2 className="sr-only">Accounts</h2>
         </>
       )}
-    </div>
-  );
-};
-
-export default MainAccount;
+    </div>);};export default MainAccount;

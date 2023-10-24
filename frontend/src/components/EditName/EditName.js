@@ -1,26 +1,4 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import "./editName.css";
-import { changeUserName } from "../../actions/put.username.action";
-
-const EditName = ({ setIsEditing }) => {
-  const dispatch = useDispatch();
-  const userProfile = useSelector((state) => state.user.userProfile);
-  const [newUserName, setNewUserName] = useState("");
-
-  const handlechangeUserName = async () => {
-    if (newUserName) {
-      dispatch(changeUserName(newUserName));
-      setIsEditing(false);
-      setNewUserName("");
-    }
-  };
-
-  const handleCancel = () => {
-    setIsEditing(false);
-    setNewUserName("");
-  };
-
+import React, { useState } from "react";import { useDispatch, useSelector } from "react-redux";import "./editName.css";import{ changeUserName } from "../../actions/put.username.action";const EditName = ({ setIsEditing }) => {const dispatch = useDispatch();const userProfile = useSelector((state) => state.user.userProfile);const [newUserName, setNewUserName] = useState("");const handlechangeUserName = async () => {if (newUserName) {dispatch(changeUserName(newUserName));setIsEditing(false);setNewUserName("");}};const handleCancel = () => {setIsEditing(false);setNewUserName("");};
   return (
     <div className="edit-form">
       <h2>Edit User info</h2>
@@ -58,8 +36,4 @@ const EditName = ({ setIsEditing }) => {
           <button onClick={handleCancel}>Cancel</button>
         </div>
       </div>
-    </div>
-  );
-};
-
-export default EditName;
+    </div>);};export default EditName;

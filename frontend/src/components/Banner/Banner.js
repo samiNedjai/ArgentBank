@@ -1,9 +1,4 @@
-import React from "react";
-import "./banner.css";
-
-const Banner = () => {
-  return (
-    <div className="hero">
+import React from"react";import"./banner.css";let Banner=()=><div className="hero">
       <section className="hero-content">
         <h2 className="sr-only">Promoted Content</h2>
         <p className="subtitle">No fees.</p>
@@ -11,8 +6,4 @@ const Banner = () => {
         <p className="subtitle">High interest rates.</p>
         <p className="text">Open a savings account with Argent Bank today!</p>
       </section>
-    </div>
-  );
-};
-
-export default Banner;
+    </div>;export default Banner;
