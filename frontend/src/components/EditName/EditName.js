@@ -5,7 +5,7 @@ import { changeUserName } from "../../actions/put.username.action";
 
 const EditName = ({ setIsEditing }) => {
   const dispatch = useDispatch();
-  const userProfile = useSelector((state) => state.user.userProfile);
+  const userProfile = useSelector((state) => state.UserReducer.userProfile);
   const [newUserName, setNewUserName] = useState("");
 
   const handlechangeUserName = async () => {

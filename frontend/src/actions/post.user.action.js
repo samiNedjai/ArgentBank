@@ -34,6 +34,7 @@ export const loginUser =
       })
       .then((response) => {
         if (response.status === 200) {
+          // console.log(response)
           const token = response.data.body.token;
           if (rememberMe) {
             localStorage.setItem("token", token);

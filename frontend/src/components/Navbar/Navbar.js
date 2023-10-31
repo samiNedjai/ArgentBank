@@ -12,7 +12,7 @@ const Navbar = () => {
   const tokenLocalStorage = localStorage.getItem("token");
   const tokenSessionStorage = sessionStorage.getItem("token");
   const token = tokenLocalStorage || tokenSessionStorage;
-  const userProfile = useSelector((state) => state.user.userProfile);
+  const userProfile = useSelector((state) => state.UserReducer.userProfile);
   // console.log(userProfile);
   const navigate = useNavigate();
   const dispatch = useDispatch();

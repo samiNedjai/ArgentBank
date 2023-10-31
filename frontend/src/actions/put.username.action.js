@@ -10,7 +10,6 @@ export const changeUserName = (userName) => {
     if (!token) {
       token = sessionStorage.getItem("token");
     }
-
     if (!token) {
       return;
     }
@@ -26,6 +25,7 @@ export const changeUserName = (userName) => {
         }
       )
       .then((response) => {
+        console.log(response)
         if (response.status === 200) {
           dispatch({
             type: CHANGE_USER_NAME,

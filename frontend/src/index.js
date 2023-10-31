@@ -6,7 +6,7 @@ import App from "./App";
 // Redux
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import rootReucer from "./reducers/index";
+import rootReucer from "./reducers";
 
 const store = configureStore({
   reducer: rootReucer,

@@ -3,5 +3,5 @@ import UserReducer from "./user.reducer";
 
 export default combineReducers({
   // reducers
-  user: UserReducer,
+   UserReducer,
 });

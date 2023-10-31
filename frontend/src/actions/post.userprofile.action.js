@@ -26,6 +26,7 @@ export const PostUserProfile = () => (dispatch) => {
     )
     .then((response) => {
       if (response.status === 200) {
+        // console.log(response)
         const userProfile = response.data.body;
         dispatch({
           type: USER_PROFILE,

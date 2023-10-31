@@ -6,7 +6,7 @@ import EditName from "../EditName/EditName";
 
 const MainAccount = () => {
   const dispatch = useDispatch();
-  const userProfile = useSelector((state) => state.user.userProfile);
+  const userProfile = useSelector((state) => state.UserReducer.userProfile);
   const [isEditing, setIsEditing] = useState(false);
 
   useEffect(() => {

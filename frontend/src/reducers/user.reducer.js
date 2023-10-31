@@ -7,7 +7,6 @@ import { USER_PROFILE } from "../actions/post.userprofile.action";
 import { CHANGE_USER_NAME } from "../actions/put.username.action";
 
 const initialState = {
-  // loginError: null,
   userProfile: "",
 };
 
@@ -16,7 +15,6 @@ const UserReducer = (state = initialState, action) => {
     case USER_LOGIN_SUCCESS:
       return {
         ...state,
-        // loginError: null,
       };
     case USER_LOGIN_FAIL:
       return {
@@ -26,7 +24,6 @@ const UserReducer = (state = initialState, action) => {
     case LOGOUT_USER:
       return {
         ...state,
-        // loginError: null,
         userProfile: "",
       };
     case USER_PROFILE:
