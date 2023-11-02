@@ -9,9 +9,11 @@ import { PostUserProfile } from "../../actions/post.userprofile.action";
 import "./navbar.css";
 
 const Navbar = () => {
+  // Vérifie si le jeton (token) de l'utilisateur est stocké dans le stockage local ou de session
   const tokenLocalStorage = localStorage.getItem("token");
   const tokenSessionStorage = sessionStorage.getItem("token");
   const token = tokenLocalStorage || tokenSessionStorage;
+  // Récupère le profil de l'utilisateur depuis le store Redux
   const userProfile = useSelector((state) => state.UserReducer.userProfile);
   // console.log(userProfile);
   const navigate = useNavigate();
@@ -19,18 +21,19 @@ const Navbar = () => {
 
   const handleSignOut = (e) => {
     e.preventDefault();
+    // Envoie une action pour déconnecter l'utilisateur
     dispatch(logoutUser());
     navigate("/ArgentBank");
   };
-
+// Utilise le hook useEffect pour récupérer le profil de l'utilisateur lorsque le composant est monté
   useEffect(() => {
     dispatch(PostUserProfile());
   }, [dispatch]);
-
+// Rend la barre de navigation en fonction de l'authentification de l'utilisateur (présence d'un jeton)
   if (token) {
     return (
       <nav className="main-nav">
-        <NavLink to="/" className="main-nav-logo">
+        <NavLink to="/ArgentBank" className="main-nav-logo">
           <img
             src={logo}
             alt="Argent Bank Logo"
@@ -43,7 +46,7 @@ const Navbar = () => {
             <i className="fa fa-user-circle"></i>
             {userProfile.userName}
           </NavLink>
-          <NavLink to="/" className="main-nav-item" onClick={handleSignOut}>
+          <NavLink to="/ArgentBank" className="main-nav-item" onClick={handleSignOut}>
             <i className="fa fa-sign-out"></i>
             Sign Out
           </NavLink>
@@ -53,7 +56,7 @@ const Navbar = () => {
   } else {
     return (
       <nav className="main-nav">
-        <NavLink to="/" className="main-nav-logo">
+        <NavLink to="/ArgentBank" className="main-nav-logo">
           <img
             src={logo}
             alt="Argent Bank Logo"

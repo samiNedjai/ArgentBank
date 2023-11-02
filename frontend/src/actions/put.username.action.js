@@ -25,7 +25,7 @@ export const changeUserName = (userName) => {
         }
       )
       .then((response) => {
-        console.log(response)
+        // console.log(response)
         if (response.status === 200) {
           dispatch({
             type: CHANGE_USER_NAME,

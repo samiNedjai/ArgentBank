@@ -5,15 +5,21 @@ import { useNavigate } from "react-router-dom";
 import "./form.css";
 
 const Form = () => {
+  // Définition des états du formulaire
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+
+  // Accès aux fonctions et données de Redux
   const dispatch = useDispatch();
   const loginError = useSelector((state) => state.UserReducer.loginError);
+  // Accès à la fonction de navigation de React Router
   const navigate = useNavigate();
 
+  // Gestionnaire de soumission du formulaire
   const handleSignIn = (e) => {
     e.preventDefault();
+    // Appel de l'action Redux pour la connexion de l'utilisateur
     dispatch(loginUser(email, password, navigate, rememberMe));
   };
 
@@ -21,7 +27,8 @@ const Form = () => {
   if (loginError) {
     errorMessage = <p style={{ color: "red" }}>{loginError}</p>;
   }
-
+  
+// Rendu du composant
   return (
     <main className="main bg-dark">
       <section className="sign-in-content">

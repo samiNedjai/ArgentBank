@@ -4,19 +4,25 @@ import "./editName.css";
 import { changeUserName } from "../../actions/put.username.action";
 
 const EditName = ({ setIsEditing }) => {
+  // Récupère la fonction dispatch du store Redux
   const dispatch = useDispatch();
+  // Sélectionne les données de l'utilisateur à partir du store Redux
   const userProfile = useSelector((state) => state.UserReducer.userProfile);
+  // Initialise une variable d'état pour le nouveau nom d'utilisateur
   const [newUserName, setNewUserName] = useState("");
 
+  // Fonction appelée lorsque l'utilisateur clique sur "Save" pour changer le nom d'utilisateur
   const handlechangeUserName = async () => {
     if (newUserName) {
+      // Dispatche une action Redux pour changer le nom d'utilisateur
       dispatch(changeUserName(newUserName));
       setIsEditing(false);
       setNewUserName("");
     }
   };
-
+    // Fonction appelée lorsque l'utilisateur clique sur "Cancel" pour annuler les modifications
   const handleCancel = () => {
+    // Réinitialise le champ de saisie du nouveau nom d'utilisateur et masque le formulaire d'édition
     setIsEditing(false);
     setNewUserName("");
   };

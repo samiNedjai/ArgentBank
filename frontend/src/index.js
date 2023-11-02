@@ -8,8 +8,10 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReucer from "./reducers";
 
+// Configuration du magasin Redux
 const store = configureStore({
   reducer: rootReucer,
+  // Propriété "devTools" : active l'extension Redux DevTools pour le débogage
   devTools: true,
 });
 
