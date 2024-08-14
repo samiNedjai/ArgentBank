@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../actions/post.user.action";
+import { loginUser } from "../../actions/userAuthActions";
 import { useNavigate } from "react-router-dom";
 import "./form.css";
 

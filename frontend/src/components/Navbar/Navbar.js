@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/argentBankLogo.webp";
 
-import { logoutUser } from "../../actions/post.user.action";
-import { PostUserProfile } from "../../actions/post.userprofile.action";
+import { logoutUser } from "../../actions/userAuthActions";
+import { PostUserProfile } from "../../actions/userProfileActions";
 
 import "./navbar.css";
 

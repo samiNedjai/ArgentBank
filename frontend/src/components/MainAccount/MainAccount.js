@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./mainAccount.css";
-import { PostUserProfile } from "../../actions/post.userprofile.action";
+import { PostUserProfile } from "../../actions/userProfileActions";
 import EditName from "../EditName/EditName";
 
 const MainAccount = () => {

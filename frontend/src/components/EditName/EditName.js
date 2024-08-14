@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./editName.css";
-import { changeUserName } from "../../actions/put.username.action";
+import { changeUserName } from "../../actions/updateUserNameActions";
 
 const EditName = ({ setIsEditing }) => {
   // Récupère la fonction dispatch du store Redux

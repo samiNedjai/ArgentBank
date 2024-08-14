@@ -2,9 +2,9 @@ import {
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
   LOGOUT_USER,
-} from "../actions/post.user.action";
-import { USER_PROFILE } from "../actions/post.userprofile.action";
-import { CHANGE_USER_NAME } from "../actions/put.username.action";
+} from "../actions/userAuthActions";
+import { USER_PROFILE } from "../actions/userProfileActions";
+import { CHANGE_USER_NAME } from "../actions/updateUserNameActions";
 
 // Définition de l'état initial de ce réducteur
 const initialState = {
