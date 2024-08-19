@@ -40,6 +40,7 @@ const Form = () => {
             <input
               type="text"
               id="email"
+              autoComplete="username" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -50,6 +51,7 @@ const Form = () => {
             <input
               type="password"
               id="password"
+              autoComplete="current-password" 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
