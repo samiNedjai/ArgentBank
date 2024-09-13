@@ -36,7 +36,7 @@ export const loginUser = (email, password, navigate, rememberMe) => (dispatch) =
     })
   })
   .then(response => {
-    if (response.ok) {  // Vérifier que la réponse est ok (status 200-299)
+    if (response.ok) {  
       return response.json();
     } else {
       throw new Error('Network response was not ok.');

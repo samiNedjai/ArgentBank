@@ -1,6 +1,7 @@
 # **ArgentBank - Application de gestion bancaire**
 ![ArgentBank Icon](./src/assets/argentBankLogo.webp)
 
+
 ## **Table des matières**
 1. [Description du projet](#description-du-projet)
 2. [Fonctionnalités](#fonctionnalités)
