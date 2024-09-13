@@ -1,5 +1,8 @@
 # **ArgentBank - Application de gestion bancaire**
-![ArgentBank Icon](./src/assets/argentBankLogo.webp)
+![ArgentBank Icon](./frontend/src/assets/ArgentBank.png)
+## **Démo en ligne**
+
+Vous pouvez accéder à la démo en ligne de l'application [ArgentBank ici](https://saminedjai.github.io/ArgentBank/).
 
 
 ## **Table des matières**
